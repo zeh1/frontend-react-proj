@@ -1,0 +1,12 @@
+red, lightgrey, darkgrey
+
+data flow, router outlet
+
+Navbar(isAuth, token) > NavbarAuth or NavbarUnauth [login, signup, logout]
+Posts(isAuth, token) [fetch, render posts, load form or not] > Post
+Replies(isAuth, token) [fetch, render post and replies, load form or not] > reply
+Footer [empty]
+
+LoginForm
+SignupForm
+ApiClient
