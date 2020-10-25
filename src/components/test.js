@@ -1,14 +1,14 @@
 import React from 'react';
 import './test.css';
 
-import {Route} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
-function test() {
+export default function Test() {
     return (
-      <Route path="/test">
-          <p className="test-p">test</p>
-      </Route>
+        <div>
+            <Link to="/">redirect</Link>
+            <p>test</p>
+        </div>
+
     );
 }
-
-export default test;

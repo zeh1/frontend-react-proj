@@ -1,16 +1,19 @@
 import React from 'react';
 import './App.css';
 
-import {Link} from "react-router-dom";
+import {Link, Route} from "react-router-dom";
 
-import test from "./components/test";
+import Test from "./components/test";
 
 function App() {
   return (
     <div>
       <p className="App-p">home</p>
-      <Link to="/test"> link </Link>    
-      <test/>
+      <Link to="/test"> link </Link>  
+
+      <Route path="/test">
+          <Test></Test>
+        </Route>  
     </div>
   );
 }
