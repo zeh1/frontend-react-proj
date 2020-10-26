@@ -1,14 +1,22 @@
 import React from 'react';
 import './test.css';
 
-import {Link, Redirect} from "react-router-dom";
+import {Route, Link, Switch, Redirect} from "react-router-dom";
 
-export default function Test() {
+export default function Test(to) {
     return (
         <div>
-            <Link to="/">redirect</Link>
-            <p>test</p>
-        </div>
+            <Switch>
+            <Route path="/test">
+                <p>TEST</p>
+                <Link to="/test2">{new Date().toUTCString()}</Link>
+                <Link to="home"><pre>home</pre></Link>
+            </Route>
 
+            <Route path="/test2">
+                <Redirect to="/"></Redirect>
+            </Route>
+            </Switch>
+        </div>
     );
 }
