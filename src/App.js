@@ -1,33 +1,31 @@
 import React, { useEffect } from 'react';
 import './App.css';
 
-import {Link} from "react-router-dom";
-
-import Test from "./components/test";
-
-
-
+import './components/test'
 
 export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      date: ''
+      date: 'original state'
     }
     console.log('constructed')
   }
   componentDidMount() {
     this.setState({
-      date: new Date().toUTCString()
+      date: 'original state'
     })
     console.log('mounted')
   }
+  componentDidUpdate() {
+    console.log('updated')
+  }
   render() {
-    return <div>
-      <p className="App-p">{this.state.date}</p>
-      <Link to="/test"> link </Link>  
-
-      <Test></Test>
-    </div>
+    return (
+      <React.Fragment>
+        <p className="App-p">{this.state.date}</p>
+        <Test></Test>
+      </React.Fragment>
+    )
   }
 }
