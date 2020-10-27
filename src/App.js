@@ -23,16 +23,21 @@ export default class App extends React.Component {
   }
   handleinput = (e) => {
     console.log('input event')
-    this.setState({
-      input: e.target.value
+    
+    this.setState((prev, props)=>{
+      console.log(`prev state: ${prev.input}`)
+      console.log(`props: ${Object.keys(props).length === 0 && props.constructor === Object}`)
+      return {
+        input: e.target.value
+      }
     })
-    console.log(`${this.state.date}`)
+    console.log(`after input ${this.state.date}`)
   }
   render() {
     return (
       <React.Fragment>
         <p className="App-p">{this.state.date}</p>
-        <Test></Test>
+        <Test put={this.state.input}></Test>
         <input type="text" onInput={this.handleinput}></input>
         <p>input is {this.state.input}</p>
       </React.Fragment>

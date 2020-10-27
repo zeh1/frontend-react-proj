@@ -3,10 +3,6 @@ Posts(isAuth, token) [fetch, render posts, load form or not] > Post
 Replies(isAuth, token) [fetch, render post and replies, load form or not] > reply
 Footer [empty]
 
-LoginForm
-SignupForm
-ApiClient
-
 --------------------------------------------------------------------------------------
 
 render all routes inside switch always
@@ -32,5 +28,20 @@ when? rerender? state change? (lifecycle) mount/update/unmount/usestate/useeffec
 AuthChecker
     Navbar
         NavAuth || NavUnauth
-    Posts
-        PostsAuth || PostsUnauth --- test: will rerender refetch if fetch on didmount
+
+    Switch
+        Route
+            Posts
+                PostsAuth || PostsUnauth
+        Route
+            Replies
+                RepliesAuth || RepliesUnauth
+        ProtectedRoute
+            LoginForm
+        ProtectedRoute
+            SignupForm
+
+    Footer
+#
+
+ApiClient
