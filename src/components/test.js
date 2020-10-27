@@ -26,6 +26,7 @@ export default class Test extends React.Component {
             <>
                 <p>{this.props.put}</p>
                 <p>{this.state.perma}</p>
+                <p>{this.props.test}</p>
             </>
         )
     }

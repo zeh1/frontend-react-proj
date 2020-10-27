@@ -37,7 +37,7 @@ export default class App extends React.Component {
     return (
       <React.Fragment>
         <p className="App-p">{this.state.date}</p>
-        <Test put={this.state.input}></Test>
+        <Test put={this.state.input} test={5}></Test>
         <input type="text" onInput={this.handleinput}></input>
         <p>input is {this.state.input}</p>
       </React.Fragment>
