@@ -1,0 +1,22 @@
+AuthChecker
+    Navbar(isAuth, jwt)
+        NavAuth || NavUnauth
+
+    Switch
+        Route
+            Posts(isAuth, jwt)
+                PostForm
+                Post
+        Route
+            Replies(isAuth, jwt)
+                ReplyForm
+                Reply
+        Route
+            LoginForm(isAuth, jwt) || Redirect
+        Route
+            SignupForm(isAuth, jwt) || Redirect
+
+    Footer
+#
+
+ApiClient
