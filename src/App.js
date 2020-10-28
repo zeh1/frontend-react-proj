@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 
-import './components/AuthChecker'
+import AuthChecker from './components/AuthChecker'
 
 export default class App extends React.Component {
   constructor(props) {

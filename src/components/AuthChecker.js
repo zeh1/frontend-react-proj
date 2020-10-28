@@ -1,11 +1,12 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
 
-import Navbar from './components/Navbar'
-import Posts from './components/Posts'
-import Replies from './components/Replies'
-import LoginForm from './components/LoginForm'
-import SignupForm from './components/SignupForm'
+import Navbar from './Navbar'
+import Posts from './Posts'
+import Replies from './Replies'
+import LoginForm from './LoginForm'
+import SignupForm from './SignupForm'
+import Footer from './Footer'
 
 export default class AuthChecker extends React.Component {
     
@@ -18,7 +19,7 @@ export default class AuthChecker extends React.Component {
     }
 
     componentDidMount() {
-        token = localStorage.getItem('jwt')
+        let token = localStorage.getItem('jwt')
         if (token) {
             this.setState({
                 token: token,
