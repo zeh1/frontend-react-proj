@@ -1,5 +1,7 @@
 import React from 'react'
-import './AuthChecker.css'
+import {Switch, Route} from 'react-router-dom'
+
+
 
 export default class AuthChecker extends React.Component {
     
@@ -16,8 +18,29 @@ export default class AuthChecker extends React.Component {
         })
     }
 
-    componentDidUpdate() {
-        
+    loginSuccessEvent() {
+        this.setState({
+            token: localStorage.getItem('jwt')
+        })
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+
+                <Navbar></Navbar>
+
+                <Switch>
+                    <Route></Route>
+                    <Route></Route>
+                    <Route></Route>
+                    <Route></Route>
+                </Switch>
+
+                <Footer></Footer>
+
+            </React.Fragment>
+        )
     }
 
 }
