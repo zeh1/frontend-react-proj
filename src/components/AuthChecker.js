@@ -18,7 +18,7 @@ export default class AuthChecker extends React.Component {
     }
 
     componentDidMount() {
-        let token = localStorage.getItem('jwt')
+        let token = localStorage.getItem('token')
         if (token) {
             this.setState({
                 token: token,
@@ -30,8 +30,17 @@ export default class AuthChecker extends React.Component {
     loginSuccessEvent = () => {
         console.log('logged in')
         this.setState({
-            token: localStorage.getItem('jwt'),
+            token: localStorage.getItem('token'),
             isAuth: true
+        })
+    }
+
+    logout = () => {
+        console.log('logged out')
+        localStorage.removeItem('token')
+        this.setState({
+            token: null,
+            isAuth: false
         })
     }
 
@@ -39,7 +48,7 @@ export default class AuthChecker extends React.Component {
         return (
             <React.Fragment>
 
-                <Navbar isAuth={this.state.isAuth}></Navbar>
+                <Navbar isAuth={this.state.isAuth} logout={this.logout}></Navbar>
 
                 <Switch>
                     <Route path='/login' render={ (routeProps) => <LoginForm {...routeProps} {...this.state} loginSuccessEvent={this.loginSuccessEvent}></LoginForm> }></Route>
