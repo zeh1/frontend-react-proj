@@ -13,7 +13,8 @@ export default class Post extends React.Component {
             <>
                 <div className='post-container'>
                     <div className='post'>
-                        individual post
+                        <h3>{this.props.title}</h3>
+                        <p>{this.props.body}</p>
                     </div>
                 </div>
             </>

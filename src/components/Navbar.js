@@ -26,8 +26,8 @@ export default class Navbar extends React.Component {
                     </div>
                     <div className='right'>
                         <ul>
-                            <li><Link to='/account'>Account</Link></li>
-                            <li><Link to='/logout' onClick={this.props.logout}>Log out</Link></li>
+                            <li><Link to='/'>Account</Link></li>
+                            <li><Link to='/' onClick={this.props.logout}>Log out</Link></li>
                         </ul>
                     </div>
                 </div>

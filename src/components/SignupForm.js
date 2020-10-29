@@ -48,12 +48,14 @@ export default class SignupForm extends React.Component {
         fetch('http://127.0.0.1:8000/', options).then(res=>{
             if (res.ok) {
                 return res.json()
+            } else {
+                return Promise.reject('failed')
             }
         }).then(res=>{
             localStorage.setItem('token', res.token)
             this.props.loginSuccessEvent()
         }).catch(err=>{
-            console.log(err)
+            alert(err)
         })
     }
 
