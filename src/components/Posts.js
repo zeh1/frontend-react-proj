@@ -13,15 +13,13 @@ export default class Posts extends React.Component {
     }
 
     componentDidMount() {
-        console.log('mounted')
-        fetch('http://127.0.0.1:8000/').then(res=>{
+        fetch('http://127.0.0.1:8000/api/posts').then(res=>{
             if (res.ok) {
-                console.log('receieved')
                 return res.json()
             }
         }).then(res=>{
             this.setState({
-                posts: res
+                posts: res.posts
             })
         }).catch(err=>{
             console.log(err)
@@ -30,32 +28,24 @@ export default class Posts extends React.Component {
 
     render() {
 
-        let list = null
         let postList = null
-        if (list) {
-            list = this.state.posts
+        if (this.state.posts) {
+            let list = this.state.posts
+            postList = list.map((entry)=>{
+                return <Post {...entry} key={JSON.stringify(entry)}></Post>
+            })
         }
-        //
-
-        const list = this.state.posts
-
-        console.log('breakpoint')
-        console.log(list)
-
-        const postList = list.map((entry)=>{
-            return <Post {...entry}></Post>
-        })
 
         if (this.props.isAuth) {
             return (
                 <>
                     <PostForm></PostForm>
-                    {postList}
+                    <ul>{postList}</ul>
                 </>
             )
         } else {
             return (
-                {postList}
+                <ul>{postList}</ul>
             )
         }
     }

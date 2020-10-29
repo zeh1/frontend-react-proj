@@ -1,5 +1,10 @@
-.footer {
-    height: 300px;
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background: black;
     width: 100vw;
-    background: grey;
+    height: 150px;
+    color: white;
 }

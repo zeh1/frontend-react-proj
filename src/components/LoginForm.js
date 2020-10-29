@@ -26,6 +26,7 @@ export default class LoginForm extends React.Component {
 
     submitForm = (e) => {
         e.preventDefault()
+
         const options = {
             method: 'POST',
             headers: {
@@ -33,6 +34,7 @@ export default class LoginForm extends React.Component {
             },
             body: JSON.stringify(this.state)
         }
+
         fetch('http://127.0.0.1:8000/', options).then((res)=>{
             if (res.ok) {
                 return res.json()
@@ -50,12 +52,14 @@ export default class LoginForm extends React.Component {
             return <Redirect to='/'></Redirect>
         } else {
             return (
-                <form onSubmit={this.submitForm}>
-                    <p>Log In</p>
-                    <input type='text' placeholder='Username' onInput={this.updateUsername}></input>
-                    <input type='password' placeholder='Password' onInput={this.updatePassword}></input>
-                    <button type='submit'>Submit</button>
-                </form>
+                <div className='loginform-container'>
+                    <form onSubmit={this.submitForm}>
+                        <p>Log In</p>
+                        <input type='text' placeholder='Username' onInput={this.updateUsername}></input>
+                        <input type='password' placeholder='Password' onInput={this.updatePassword}></input>
+                        <button type='submit'>Submit</button>
+                    </form>
+                </div>
             )
         }
     }
