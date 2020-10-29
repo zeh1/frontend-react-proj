@@ -17,21 +17,25 @@ export default class PostForm extends React.Component {
     }
 
     updateTitle = (e) => {
-        this.setState({
-            title: e.target.value
-        })
+        if (e) {
+            this.setState({
+                title: e.target.value
+            })
+        }
     }
 
     updateBody = (e) => {
-        this.setState({
-            body: e.target.value
-        })
+        if (e) {
+            this.setState({
+                body: e.target.value
+            })
+        }
     }
 
     render() {
         return (
             <div className='postform-container'>
-                <form onSubmit={this.submitForm()}>
+                <form onSubmit={this.submitForm}>
                     <input type='text' placeholder='Title' onInput={this.updateTitle()}></input>
                     <input type='textarea' placeholder='Body' onInput={this.updateBody()}></input>
                 </form>

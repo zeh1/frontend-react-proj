@@ -6,7 +6,6 @@ import Posts from './Posts'
 import Replies from './Replies'
 import LoginForm from './LoginForm'
 import SignupForm from './SignupForm'
-import Footer from './Footer'
 
 export default class AuthChecker extends React.Component {
     
@@ -28,7 +27,8 @@ export default class AuthChecker extends React.Component {
         }
     }
 
-    loginSuccessEvent() {
+    loginSuccessEvent = () => {
+        console.log('logged in')
         this.setState({
             token: localStorage.getItem('jwt'),
             isAuth: true
@@ -39,16 +39,14 @@ export default class AuthChecker extends React.Component {
         return (
             <React.Fragment>
 
-                <Navbar></Navbar>
+                <Navbar isAuth={this.state.isAuth}></Navbar>
 
                 <Switch>
-                    <Route path='/' render={ (routeProps) => <Posts {...routeProps} {...this.state}></Posts> }></Route>
-                    <Route path='/:postId' render={ (routeProps) => <Replies {...routeProps} {...this.state}></Replies> }></Route>
                     <Route path='/login' render={ (routeProps) => <LoginForm {...routeProps} {...this.state} loginSuccessEvent={this.loginSuccessEvent}></LoginForm> }></Route>
                     <Route path='/signup' render={ (routeProps) => <SignupForm {...routeProps} {...this.state} loginSuccessEvent={this.loginSuccessEvent}></SignupForm> }></Route>
+                    <Route path='/:postId' render={ (routeProps) => <Replies {...routeProps} {...this.state}></Replies> }></Route>
+                    <Route path='/' render={ (routeProps) => <Posts {...routeProps} {...this.state}></Posts> }></Route>
                 </Switch>
-
-                <Footer></Footer>
 
             </React.Fragment>
         )

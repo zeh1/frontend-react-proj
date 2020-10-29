@@ -32,10 +32,19 @@ export default class LoginForm extends React.Component {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(this.state)
+            body: JSON.stringify(this.state),
+            body: JSON.stringify({
+                "username": "user10",
+                "title": "TITLE",
+                "body": "BODY",
+                "password": "pw10",
+                "email": "email10@x.com",
+                "user_id": 1,
+                "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InVzZXIxMCIsImpvaW5lZCI6IjIwMjAtMTAtMjEgMTk6Mjc6MTguMTY2MzI2KzAwOjAwIiwidXNlcl9pZCI6bnVsbCwiZXhwIjoxNjAzMzk0ODM4fQ.FxkGMQTxV9D6z48eHXX4xKKOgnsmktILjqYM57g16AI"
+            })
         }
 
-        fetch('http://127.0.0.1:8000/', options).then((res)=>{
+        fetch('http://127.0.0.1:8000/auth/login', options).then((res)=>{
             if (res.ok) {
                 return res.json()
             }

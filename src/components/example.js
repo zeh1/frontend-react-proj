@@ -24,9 +24,7 @@ export default class Test extends React.Component {
     render() {
         return (
             <>
-                <p>{this.props.put}</p>
-                <p>{this.state.perma}</p>
-                <p>{this.props.test}</p>
+                <div>asd</div>
             </>
         )
     }

@@ -43,7 +43,7 @@ export default class Navbar extends React.Component {
                     <div className='right'>
                         <ul>
                             <li><Link to='/login'>Log in</Link></li>
-                            <li><Link to='/signin'>Sign in</Link></li>
+                            <li><Link to='/signup'>Sign up</Link></li>
                         </ul>
                     </div>
                 </div>
