@@ -22,12 +22,12 @@ export default class Navbar extends React.Component {
             <div className='navbar-container'>
                 <div className='navbar'>
                     <div className='left'>
-                        <Link to='/'>Welcome {username}</Link>
+                        <Link className='link' to='/'>Welcome {username}</Link>
                     </div>
                     <div className='right'>
                         <ul>
-                            <li><Link to='/'>Account</Link></li>
-                            <li><Link to='/' onClick={this.props.logout}>Log out</Link></li>
+                            <li><Link className='link' to='/'>Account</Link></li>
+                            <li><Link className='link' to='/' onClick={this.props.logout}>Log out</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -38,12 +38,12 @@ export default class Navbar extends React.Component {
             <div className='navbar-container'>
                 <div className='navbar'>
                     <div className='left'>
-                        <Link to='/'>Welcome {username}</Link>
+                        <Link className='link' to='/'>Welcome {username}</Link>
                     </div>
                     <div className='right'>
                         <ul>
-                            <li><Link to='/login'>Log in</Link></li>
-                            <li><Link to='/signup'>Sign up</Link></li>
+                            <li><Link className='link' to='/login'>Log in</Link></li>
+                            <li><Link className='link' to='/signup'>Sign up</Link></li>
                         </ul>
                     </div>
                 </div>

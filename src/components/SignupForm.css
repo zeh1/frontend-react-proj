@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 100vh;
+    height: 75vh;
 }
 
 .signup-form div {
@@ -41,6 +41,7 @@
 
 .signup-form svg {
     margin: 0 auto;
+    color: white;
     transition: color .25s ease;
 }
 

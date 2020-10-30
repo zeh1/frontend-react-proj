@@ -1,0 +1,37 @@
+.navbar {
+    background: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar .link {
+    color: white;
+    text-decoration: none;
+    transition: color .5s ease;
+}
+
+.navbar li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.navbar {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.navbar-container {
+    background: black;
+    position: sticky;
+    top: 0;
+    padding: 15px;
+    opacity: .85;
+}
+
+.navbar > * {
+    font-size: 25px;
+}
+
+.navbar .link:hover {
+    color: #66fcf1;
+}
