@@ -8,7 +8,8 @@ export default class LoginForm extends React.Component {
         super(props)
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            err: false
         }
     }
 
@@ -45,6 +46,9 @@ export default class LoginForm extends React.Component {
             this.props.loginSuccessEvent()
         }).catch(err=>{
             console.log(err)
+            this.setState({
+                err: true
+            })
         })
     }
 
@@ -56,8 +60,8 @@ export default class LoginForm extends React.Component {
                 <div className='loginform-container'>
                     <form onSubmit={this.submitForm}>
                         <p>Log In</p>
-                        <input type='text' placeholder='Username' onInput={this.updateUsername}></input>
-                        <input type='password' placeholder='Password' onInput={this.updatePassword}></input>
+                        <input type='text' placeholder='Username' onInput={this.updateUsername} required></input>
+                        <input type='password' placeholder='Password' onInput={this.updatePassword} required></input>
 
                         <button type="submit">
                             <svg width="45px" height="45px" viewBox="0 0 16 16" class="bi bi-arrow-right-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -65,6 +69,8 @@ export default class LoginForm extends React.Component {
                                 <path fill-rule="evenodd" d="M4 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5A.5.5 0 0 0 4 8z"/>
                             </svg>
                         </button>
+
+                        {this.state.err && <span>error</span>}
 
                     </form>
                 </div>

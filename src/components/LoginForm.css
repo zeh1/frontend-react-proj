@@ -11,6 +11,7 @@
     flex-direction: column;
     width: 400px;
     opacity: .8;
+    position: relative;
 }
 
 .loginform-container input, .loginform-container button {
@@ -47,4 +48,12 @@
 
 .loginform-container svg:hover {
     color: #66fcf1;
+}
+
+.loginform-container span {
+    position: absolute;
+    top: 250px;
+    font-size: 25px;
+    color: white;
+    left: 172px;
 }
