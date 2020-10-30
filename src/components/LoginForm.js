@@ -14,13 +14,13 @@ export default class LoginForm extends React.Component {
 
     updateUsername = (e) => {
         this.setState({
-            username: this.state.username
+            username: e.target.value
         })
     }
 
     updatePassword = (e) => {
         this.setState({
-            password: this.state.password
+            password: e.target.value
         })
     }
 
