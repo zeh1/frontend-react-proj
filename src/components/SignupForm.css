@@ -24,6 +24,7 @@
 .signup-form p {
     font-size: 1.5rem;
     text-align: center;
+    color: white;
 }
 
 .signup-form input:hover, .signup-form button:hover {
@@ -31,5 +32,18 @@
 }
 
 .signup-form div > * {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.signup-form button {
+    display: none;
+}
+
+.signup-form svg {
+    margin: 0 auto;
+    transition: color .25s ease;
+}
+
+.signup-form svg:hover {
+    color: #66fcf1;
 }
