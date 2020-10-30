@@ -45,17 +45,16 @@ export default class SignupForm extends React.Component {
             },
             body: JSON.stringify(body)
         }
-        fetch('http://127.0.0.1:8000/', options).then(res=>{
+        fetch('http://127.0.0.1:8000/auth/signup', options).then(res=>{
+            console.log(res.status)
             if (res.ok) {
                 return res.json()
-            } else {
-                return Promise.reject('failed')
             }
         }).then(res=>{
             localStorage.setItem('token', res.token)
             this.props.loginSuccessEvent()
         }).catch(err=>{
-            alert(err)
+            console.log('error')
         })
     }
 
@@ -65,12 +64,14 @@ export default class SignupForm extends React.Component {
             return <Redirect to='/'></Redirect>
         } else {
             return (
-                <form onSubmit={this.submitForm}>
-                    <p>Sign Up</p>
-                    <input type='text' placeholder='Email' onInput={this.updateEmail}></input>
-                    <input type='text' placeholder='Username' onInput={this.updateUsername}></input>
-                    <input type='password' placeholder='Password' onInput={this.updatePassword}></input>
-                    <button type='submit'>Submit</button>
+                <form className='signup-form' onSubmit={this.submitForm}>
+                    <div>
+                        <p>Sign Up</p>
+                        <input type='text' placeholder='Email' onInput={this.updateEmail}></input>
+                        <input type='text' placeholder='Username' onInput={this.updateUsername}></input>
+                        <input type='password' placeholder='Password' onInput={this.updatePassword}></input>
+                        <button type='submit'>Submit</button>
+                    </div>
                 </form>
             )
         }
