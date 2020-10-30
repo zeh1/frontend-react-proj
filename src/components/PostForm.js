@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './PostForm.css'
+
 export default class PostForm extends React.Component {
 
     constructor(props) {
@@ -36,8 +38,9 @@ export default class PostForm extends React.Component {
         return (
             <div className='postform-container'>
                 <form onSubmit={this.submitForm}>
-                    <input type='text' placeholder='Title' onInput={this.updateTitle()}></input>
-                    <input type='textarea' placeholder='Body' onInput={this.updateBody()}></input>
+                    <input type='text' placeholder='Title' onInput={this.updateTitle}></input>
+                    <textarea placeholder='Body' onInput={this.updateBody}></textarea>
+                    <button type="submit">Post</button>
                 </form>
             </div>
         )

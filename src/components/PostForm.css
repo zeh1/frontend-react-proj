@@ -1,0 +1,36 @@
+.postform-container {
+    margin-top: 25px;
+}
+
+.postform-container form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 0 auto;
+    opacity: .8;
+}
+
+.postform-container form > * {
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    transition: background-color .25s ease;
+}
+
+.postform-container input:nth-child(1) {
+    padding: 10px;
+}
+
+.postform-container textarea {
+    resize: none;
+    padding: 10px;
+    height: 70px;
+}
+
+.postform-container button {
+    padding: 10px;
+}
+
+.postform-container button:hover, .postform-container textarea:hover, .postform-container input:hover {
+    background-color: #66fcf1;
+}
