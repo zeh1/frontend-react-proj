@@ -14,7 +14,21 @@ export default class PostForm extends React.Component {
 
     submitForm = (e) => {
         e.preventDefault()
-        // TODO: implement post submission
+        
+        let body = {
+            title: this.state.title,
+            body: this.state.body,
+            token: localStorage.getItem('token')
+        }
+
+        let options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        }
+
         console.log('submitted a post')
     }
 

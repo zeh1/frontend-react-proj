@@ -45,10 +45,11 @@ export default class AuthChecker extends React.Component {
     }
 
     render() {
+
         return (
             <React.Fragment>
 
-                <Navbar isAuth={this.state.isAuth} logout={this.logout}></Navbar>
+                <Navbar {...this.state} logout={this.logout}></Navbar>
 
                 <Switch>
                     <Route path='/login' render={ (routeProps) => <LoginForm {...routeProps} {...this.state} loginSuccessEvent={this.loginSuccessEvent}></LoginForm> }></Route>
