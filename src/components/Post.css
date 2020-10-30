@@ -1,4 +1,12 @@
 .post {
-    width: 500px;
+    width: 900px;
+    opacity: .7;
     background: white;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.post hr {
+    margin: 20px 0;
 }

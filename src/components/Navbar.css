@@ -26,6 +26,7 @@
     top: 0;
     padding: 15px;
     opacity: .85;
+    z-index: 999;
 }
 
 .navbar > * {
