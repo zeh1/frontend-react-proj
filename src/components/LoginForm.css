@@ -1,0 +1,50 @@
+.loginform-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 75vh;
+}
+
+.loginform-container form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    opacity: .8;
+}
+
+.loginform-container input, .loginform-container button {
+    padding: 10px;
+    outline: none;
+    border: none;
+    transition: background-color .25s ease;
+    font-size: 1.2rem;
+}
+
+.loginform-container p {
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+}
+
+.loginform-container input:hover, .loginform-container button:hover {
+    background-color: #66fcf1;
+}
+
+.loginform-container form > * {
+    margin-bottom: 15px;
+}
+
+.loginform-container button {
+    display: none;
+}
+
+.loginform-container svg {
+    margin: 0 auto;
+    color: white;
+    transition: color .25s ease;
+}
+
+.loginform-container svg:hover {
+    color: #66fcf1;
+}
