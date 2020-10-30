@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+import './Post.css'
 
 export default class Post extends React.Component {
 
@@ -10,14 +10,12 @@ export default class Post extends React.Component {
 
     render() {
         return (
-            <>
-                <div className='post-container'>
-                    <div className='post'>
-                        <h3>{this.props.title}</h3>
-                        <p>{this.props.body}</p>
-                    </div>
+            <div className='post-container'>
+                <div className='post'>
+                    <h3>{this.props.title}</h3>
+                    <p>{this.props.body}</p>
                 </div>
-            </>
+            </div>
         )
     }
 

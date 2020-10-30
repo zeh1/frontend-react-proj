@@ -3,6 +3,8 @@ import React from 'react'
 import Post from './Post'
 import PostForm from './PostForm'
 
+import './Posts.css'
+
 export default class Posts extends React.Component {
 
     constructor(props) {
@@ -40,12 +42,12 @@ export default class Posts extends React.Component {
             return (
                 <>
                     <PostForm></PostForm>
-                    <ul>{postList}</ul>
+                    <ul className='postlist'>{postList}</ul>
                 </>
             )
         } else {
             return (
-                <ul>{postList}</ul>
+                <ul className='postlist'>{postList}</ul>
             )
         }
     }
