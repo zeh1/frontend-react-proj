@@ -27,7 +27,7 @@
     color: white;
 }
 
-.signup-form input:hover, .signup-form button:hover {
+.signup-form input:hover {
     background-color: #66fcf1;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .signup-form button {
-    display: none;
+    background: transparent;
 }
 
 .signup-form svg {

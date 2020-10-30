@@ -27,7 +27,7 @@
     color: white;
 }
 
-.loginform-container input:hover, .loginform-container button:hover {
+.loginform-container input:hover {
     background-color: #66fcf1;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .loginform-container button {
-    display: none;
+    background: transparent;
 }
 
 .loginform-container svg {
