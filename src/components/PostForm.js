@@ -29,6 +29,10 @@ export default class PostForm extends React.Component {
             body: JSON.stringify(body)
         }
 
+        fetch('http://127.0.0.1:8000/api/posts', options).catch(err=>{
+            console.log(err)
+        })
+
         console.log('submitted a post')
     }
 
