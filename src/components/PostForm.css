@@ -15,6 +15,7 @@
     border: none;
     outline: none;
     transition: background-color .25s ease;
+    font-size: 20px;
 }
 
 .postform-container input:nth-child(1) {
